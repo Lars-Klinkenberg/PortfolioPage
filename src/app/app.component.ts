@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { PageIndicatorComponent } from './page-indicator/page-indicator.component';
+import { TypingComponent } from './typing/typing.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { PageIndicatorComponent } from './page-indicator/page-indicator.componen
   imports: [
     CommonModule, 
     RouterOutlet, 
-    PageIndicatorComponent
+    PageIndicatorComponent,
+    TypingComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -17,7 +19,7 @@ import { PageIndicatorComponent } from './page-indicator/page-indicator.componen
 export class AppComponent {
   title = 'my-app';
   pageIndex = 2;
-
+  welcomeMessage = "Das ist ein Test!";
   pages: string[] = 
     [
         "home",
