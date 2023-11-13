@@ -1,18 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { PageIndicatorComponent } from './page-indicator/page-indicator.component';
-import { TypingComponent } from './typing/typing.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule, 
-    RouterOutlet, 
-    PageIndicatorComponent,
-    TypingComponent
-  ],
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

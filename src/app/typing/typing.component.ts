@@ -1,41 +1,55 @@
 import {
   Component,
-  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges,
-  ViewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-typing',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './typing.component.html',
   styleUrl: './typing.component.scss',
 })
 export class TypingComponent implements OnInit, OnChanges, OnDestroy {
+  private TICK_SPEED = 100;
+
   @Input() message = '';
-  @Input() delayInSec: number = 0.2;
+  // minimal tick count which is required to type a char
+  @Input() typingMinSpeed: number = 2;
+  // maximan tick count which is required to type a char
+  @Input() typingMaxSpeed: number = 5;
+  // after how many ticks the cursor should blink
+  @Input() cursorSpeed: number = 2;
+  // If true the message gets typed and then the animation stops
   @Input() stopAfterAnimation = false;
+  // Time after each animation cycle
+  @Input() pauseTimeInTicks = 10;
+  // accuracy in % => 100 no mistakes
+  @Input() typingAccuracy = 100;
 
   public animatedMessage = '';
   public cursor = '|';
+  public cursorIsVisible = true;
 
   private status: 'typing' | 'erasing' | 'waiting' | 'stoped' = 'typing';
   private intervalId!: any;
   private index = 0;
+  private pauseIndex = 0;
+
+  private tickCounter = 0;
+  private nextCharTickCounter = 0;
 
   ngOnInit() {
     this.subscribeToInterval();
   }
 
-  // Update subscription
-  ngOnChanges(changes: SimpleChanges): void {
+  // Update variables on change
+  ngOnChanges(): void {
     this.subscribeToInterval();
+    this.pauseIndex = this.pauseTimeInTicks;
+    this.nextCharTickCounter = this.typingMinSpeed;
   }
 
   // Delete subscription
@@ -50,7 +64,7 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
 
     this.intervalId = setInterval(() => {
       this.tick();
-    }, this.delayInSec * 1000);
+    }, this.TICK_SPEED);
   }
 
   private destroyIntervalSubscription() {
@@ -59,13 +73,35 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private tick() {
-    if (this.status == 'typing') {
-      this.typeMessage();
+    // animate cursor
+    if(this.tickCounter % this.cursorSpeed == 0){
+      this.animateCursor();
     }
 
-    if (this.status == "erasing"){
-      this.eraseMessage();
+    // typing
+    if (this.tickCounter % this.nextCharTickCounter == 0 ) {
+      // generates a number between typingMinSpeed and typingMaxSpeed
+      this.nextCharTickCounter = (Math.floor(Math.random() * this.typingMaxSpeed - this.typingMinSpeed) + 1) + this.typingMinSpeed;
+      console.log(this.nextCharTickCounter);
+      
+
+      if (this.status == 'typing') {
+        this.typeMessage();
+      }
+
+      if (this.status == 'erasing') {
+        this.eraseMessage();
+      }
+
+      this.animateCursor(true);
+      this.tickCounter = 0;
     }
+
+    if (this.status == 'waiting') {
+      this.wait();
+    }
+
+    this.tickCounter++;
   }
 
   private typeMessage() {
@@ -75,22 +111,49 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
         return;
       }
 
-      this.status = "erasing";
+      this.status = 'waiting';
       return;
     }
-    
+
+    if (this.message[this.index] == ' ') {
+      this.animatedMessage += this.message[this.index];
+      this.index++;
+      return;
+    }
+
     this.animatedMessage += this.message[this.index];
     this.index++;
   }
 
   private eraseMessage() {
-    if( this.index == 0){
-      this.status = "typing";
+    if (this.index == 0) {
+      this.status = 'waiting';
       return;
     }
-    
-    this.animatedMessage = this.animatedMessage.slice( 0, this.animatedMessage.length-1);
+
+    this.animatedMessage = this.animatedMessage.slice(
+      0,
+      this.animatedMessage.length - 1
+    );
     this.index = this.animatedMessage.length;
-    
+  }
+
+  private wait() {
+    if (this.pauseIndex == 0) {
+      if (this.index == 0) {
+        this.status = 'typing';
+      } else {
+        this.status = 'erasing';
+      }
+
+      this.pauseIndex = this.pauseTimeInTicks;
+      return;
+    }
+
+    this.pauseIndex--;
+  }
+
+  private animateCursor(forceVisible = false) {
+    this.cursorIsVisible = !this.cursorIsVisible || forceVisible;
   }
 }

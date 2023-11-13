@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'page-indicator',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './page-indicator.component.html',
   styleUrl: './page-indicator.component.scss'
 })

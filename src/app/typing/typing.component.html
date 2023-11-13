@@ -1,4 +1,4 @@
 <div class="message">
   {{ animatedMessage }}
-  <span class="cursor">{{ cursor }}</span>
+  <span class="cursor" *ngIf="cursorIsVisible">{{ cursor }}</span>
 </div>
