@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-typing',
@@ -29,8 +23,13 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
   // accuracy in % => 100 no mistakes
   @Input() typingAccuracy = 100;
 
+  // if true cursor doesnt get displayed
+  @Input() forceCursorInvisible = false;
+
+  // message which gets displayed
   public animatedMessage = '';
   public cursor = '|';
+  // if true cursor gets displayed
   public cursorIsVisible = true;
 
   private status: 'typing' | 'erasing' | 'waiting' | 'stoped' = 'typing';
@@ -38,7 +37,10 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
   private index = 0;
   private pauseIndex = 0;
 
-  private tickCounter = 0;
+  private tickCounter = {
+    cursor: 0,
+    message: 0,
+  };
   private nextCharTickCounter = 0;
 
   ngOnInit() {
@@ -74,16 +76,18 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
 
   private tick() {
     // animate cursor
-    if(this.tickCounter % this.cursorSpeed == 0){
+    if (this.tickCounter.cursor % this.cursorSpeed == 0) {
       this.animateCursor();
+      this.tickCounter.cursor = 0;
     }
 
     // typing
-    if (this.tickCounter % this.nextCharTickCounter == 0 ) {
+    if (this.tickCounter.message % this.nextCharTickCounter == 0) {
       // generates a number between typingMinSpeed and typingMaxSpeed
-      this.nextCharTickCounter = (Math.floor(Math.random() * this.typingMaxSpeed - this.typingMinSpeed) + 1) + this.typingMinSpeed;
-      console.log(this.nextCharTickCounter);
-      
+      this.nextCharTickCounter =
+        Math.floor(Math.random() * this.typingMaxSpeed - this.typingMinSpeed) +
+        1 +
+        this.typingMinSpeed;
 
       if (this.status == 'typing') {
         this.typeMessage();
@@ -94,14 +98,15 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
       }
 
       this.animateCursor(true);
-      this.tickCounter = 0;
+      this.tickCounter.message = 0;
     }
 
     if (this.status == 'waiting') {
       this.wait();
     }
 
-    this.tickCounter++;
+    this.tickCounter.cursor++;
+    this.tickCounter.message++;
   }
 
   private typeMessage() {
@@ -154,6 +159,11 @@ export class TypingComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private animateCursor(forceVisible = false) {
+    if (this.forceCursorInvisible) {
+      this.cursorIsVisible = false;
+      return;
+    }
+
     this.cursorIsVisible = !this.cursorIsVisible || forceVisible;
   }
 }

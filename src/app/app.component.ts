@@ -5,19 +5,15 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: false,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'my-app';
   pageIndex = 2;
-  welcomeMessage = "Das ist ein Test!";
-  pages: string[] = 
-    [
-        "home",
-        "about"
-    ];
+  welcomeMessage = 'Lars Klinkenberg';
+  pages: string[] = ['home', 'about'];
 
-  public navigateToPage(index: number){
-    console.log("switching to ", this.pages[index]);
+  public navigateToPage(index: number) {
+    console.log('switching to ', this.pages[index]);
   }
 }
