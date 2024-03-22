@@ -1,6 +1,41 @@
-# MyApp
+# PortfolioPage
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+
+## Folder Structure
+
+├── src
+│   ├── app
+│   │   ├── home
+│   │   │   ├── pages
+│   │   │   │   ├── a
+│   │   │   │   │   ├── a.component.ts
+│   │   │   │   ├── b
+│   │   │   │   │   ├── b.component.ts
+│   │   │   │   ├── c
+│   │   │   │   │   ├── c.component.ts
+│   │   │   │   ├── index.ts
+│   │   │   ├── home-routing.module.ts
+│   │   │   ├── home.module.ts
+│   │   │   ├── index.ts
+│   │   ├── shared
+│   │   │   ├── layout
+│   │   │   │   ├── footer
+│   │   │   │   │   ├── footer.component.ts
+│   │   │   │   │   ├── footer.component.html
+│   │   │   │   ├── header
+│   │   │   │   │   ├── header.component.ts
+│   │   │   │   │   ├── header.component.html
+│   │   │   ├── index.ts
+│   ├── app-routing.module.ts  
+│   ├── app-wildcard-routing.module.ts
+│   ├── app.component.css
+│   ├── app.component.html
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   ├── app.module.ts
+│   ├── not-found.component.ts
+
 
 ## Development server
 

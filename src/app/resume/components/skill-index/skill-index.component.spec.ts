@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageIndicatorComponent } from './page-indicator.component';
+import { SkillIndexComponent } from './skill-index.component';
 
-describe('PageIndikatorComponent', () => {
-  let component: PageIndicatorComponent;
-  let fixture: ComponentFixture<PageIndicatorComponent>;
+describe('SkillIndexComponent', () => {
+  let component: SkillIndexComponent;
+  let fixture: ComponentFixture<SkillIndexComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageIndicatorComponent]
+      imports: [SkillIndexComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PageIndicatorComponent);
+    fixture = TestBed.createComponent(SkillIndexComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
