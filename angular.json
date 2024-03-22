@@ -32,6 +32,13 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions" : {
+              "includePaths": [
+                "./src",
+                "src/styles/_variables.scss",
+                "src/styles/_mixins.scss"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
