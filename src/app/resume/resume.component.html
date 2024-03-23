@@ -1,7 +1,16 @@
-<div *ngFor="let skill of resumeData.skills">
-  <resume-skill-index
-    [skillName]="skill.name"
-    [scaleIndex]="skill.index"
-    [scaleMax]="skill.maxIndex"
-  ></resume-skill-index>
+<div *ngFor="let skillType of skillType | keyvalue">
+  <hr class="skillTypeDivider" />
+  <h2>
+    {{ skillType.value }}
+  </h2>
+  <hr class="skillTypeDivider" />
+
+  <div class="allSkills">
+    <resume-skill-index
+      *ngFor="let skill of getSkillByType(skillType.value)"
+      [skillName]="skill.name"
+      [scaleIndex]="skill.index"
+      [scaleMax]="skill.maxIndex"
+    ></resume-skill-index>
+  </div>
 </div>

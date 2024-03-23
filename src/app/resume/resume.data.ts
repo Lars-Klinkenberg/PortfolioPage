@@ -53,13 +53,13 @@ const myResume: Resume = {
     },
     {
       name: 'MySQL',
-      type: SkillType.other,
+      type: SkillType.programming,
       index: 3,
       maxIndex: 5,
     },
     {
       name: 'MongoDB',
-      type: SkillType.other,
+      type: SkillType.programming,
       index: 1,
       maxIndex: 5,
     },
