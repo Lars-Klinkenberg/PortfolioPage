@@ -1,6 +1,7 @@
-<p>resume works!</p>
-<resume-skill-index
-  [skillName]="testSkill"
-  [scaleIndex]="1"
-  [scaleMax]="5"
-></resume-skill-index>
+<div *ngFor="let skill of resumeData.skills">
+  <resume-skill-index
+    [skillName]="skill.name"
+    [scaleIndex]="skill.index"
+    [scaleMax]="skill.maxIndex"
+  ></resume-skill-index>
+</div>
