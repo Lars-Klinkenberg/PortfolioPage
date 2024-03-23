@@ -1,25 +1,26 @@
-@use "styles" as *;
+@use "styles"as *;
 
-.skillDisplay{
+.skillDisplay {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 10px 0;
 
-    .skillDots{
+    .skillDots {
         display: flex;
         flex-direction: row;
         list-style: none;
         margin: 0;
         align-items: center;
-        
-        .dot{
+
+        .dot {
             width: 10px;
             height: 10px;
             margin-right: 5px;
             background-color: $light-grey;
             border-radius: 50%;
-        
-            &.skill{
+
+            &.skill {
                 background-color: $dark-grey;
             }
         }

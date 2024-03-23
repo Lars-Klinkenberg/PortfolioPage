@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SkillIndexComponent } from './components/skill-index/skill-index.component';
 import myResume from './resume.data';
 import { CommonModule } from '@angular/common';
-import { SkillType } from './resume.model';
+import { SkillOrder } from './resume.model';
 
 @Component({
   selector: 'app-resume',
@@ -12,12 +12,16 @@ import { SkillType } from './resume.model';
   styleUrl: './resume.component.scss',
 })
 export class ResumeComponent {
-  skillType = SkillType;
   resumeData = myResume;
+  skillOrder = SkillOrder;
+
+  getSkillTypes() {
+    return Object.values(SkillOrder);
+  }
 
   getSkillByType(type: string) {
     return this.resumeData.skills.filter(
-      (skill) => skill.type.toString() === type
+      (skill) => skill.type?.toString() === type
     );
   }
 }

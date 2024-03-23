@@ -1,16 +1,22 @@
-<div *ngFor="let skillType of skillType | keyvalue">
-  <hr class="skillTypeDivider" />
-  <h2>
-    {{ skillType.value }}
-  </h2>
-  <hr class="skillTypeDivider" />
+<div class="skillContainer">
+  <div class="skillsHeader">
+    <hr class="skillDivider" />
+    <h1>Kenntnisse</h1>
+    <hr class="skillDivider" />
+  </div>
 
-  <div class="allSkills">
-    <resume-skill-index
-      *ngFor="let skill of getSkillByType(skillType.value)"
-      [skillName]="skill.name"
-      [scaleIndex]="skill.index"
-      [scaleMax]="skill.maxIndex"
-    ></resume-skill-index>
+  <div *ngFor="let skillType of getSkillTypes()">
+    <h3 class="skillTypeHeader">
+      {{ skillType }}
+    </h3>
+
+    <div class="skillsOfType">
+      <resume-skill-index
+        *ngFor="let skill of getSkillByType(skillType)"
+        [skillName]="skill.name"
+        [scaleIndex]="skill.index"
+        [scaleMax]="skill.maxIndex"
+      ></resume-skill-index>
+    </div>
   </div>
 </div>

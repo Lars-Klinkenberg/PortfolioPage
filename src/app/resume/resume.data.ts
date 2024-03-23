@@ -8,19 +8,19 @@ const myResume: Resume = {
     github: 'https://github.com/Lars-Klinkenberg',
     linkedin: 'https://www.linkedin.com/in/lars-klinkenberg-62a044167/',
   },
-  skills: [
+  languages: [
     {
       name: 'Deutsch',
-      type: SkillType.language,
       index: 4,
       maxIndex: 5,
     },
     {
       name: 'Englisch',
-      type: SkillType.language,
       index: 3,
       maxIndex: 5,
     },
+  ],
+  skills: [
     {
       name: 'HTML & CSS',
       type: SkillType.programming,
