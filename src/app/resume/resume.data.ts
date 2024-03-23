@@ -4,9 +4,6 @@ const myResume: Resume = {
   personalData: {
     name: 'Lars Klinkenberg',
     jobTitle: 'Full-Stack-Entwickler',
-    email: 'klinkenberg.lars@gmail.com',
-    github: 'https://github.com/Lars-Klinkenberg',
-    linkedin: 'https://www.linkedin.com/in/lars-klinkenberg-62a044167/',
   },
   languages: [
     {

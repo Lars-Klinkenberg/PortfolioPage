@@ -1,9 +1,59 @@
-.skillContainer {
-    max-width: min(100%, 350px);
+.resumePage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 10px;
 
-    .skillTypeHeader {}
+    .resumeSide {
+        max-width: min(100%, 350px);
+        margin: 10px;
 
-    .skillsOfType {
-        margin: 20px 0;
+
+        .personalData {
+            text-align: center;
+
+            .name {
+                font-weight: 700;
+                font-size: 25px;
+                letter-spacing: 5px;
+                text-transform: none;
+                margin: 0;
+            }
+
+            .jobTitle {
+                font-weight: 600;
+                font-size: 20px;
+                text-transform: none;
+                margin: 0;
+                margin-top: 10px;
+            }
+
+            .profile {
+                width: 200px;
+                width: 200px;
+                margin: 30px 0 50px 0;
+                border-radius: 50%;
+            }
+        }
+
+        .skillContainer {
+            word-wrap: break-word;
+
+            .resumeHeader {
+                margin: 40px 0 20px 0;
+            }
+
+            .skillsOfType {
+                margin: 0 0 40px 0;
+            }
+        }
+    }
+
+    .resumeMain {
+        flex-grow: 100;
+        min-width: 500px;
+        margin: 10px;
+
     }
 }

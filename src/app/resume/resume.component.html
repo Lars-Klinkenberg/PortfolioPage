@@ -1,22 +1,52 @@
-<div class="skillContainer">
-  <div class="skillsHeader">
-    <hr class="skillDivider" />
-    <h1>Kenntnisse</h1>
-    <hr class="skillDivider" />
-  </div>
-
-  <div *ngFor="let skillType of getSkillTypes()">
-    <h3 class="skillTypeHeader">
-      {{ skillType }}
-    </h3>
-
-    <div class="skillsOfType">
+<div class="resumePage">
+  <div class="resumeSide">
+    <!-- --- Personal Data --- -->
+    <div class="personalData">
+      <h1 class="name">{{ resumeData.personalData.name }}</h1>
+      <h3 class="jobTitle">{{ resumeData.personalData.jobTitle }}</h3>
+      <img src="../../assets/Klinkenberg_Lars.jpg" alt="Profil Bild" class="profile"/>
+    </div>
+    <!-- --- End Personal Data -->
+    <!-- --- Skills --- -->
+    <div class="skillContainer">
+      <div class="resumeHeader">
+        <hr />
+        <h1>Sprachen</h1>
+        <hr />
+      </div>
       <resume-skill-index
-        *ngFor="let skill of getSkillByType(skillType)"
+        *ngFor="let skill of resumeData.languages"
         [skillName]="skill.name"
         [scaleIndex]="skill.index"
         [scaleMax]="skill.maxIndex"
       ></resume-skill-index>
+
+      <div class="resumeHeader">
+        <hr />
+        <h1>Kenntnisse</h1>
+        <hr />
+      </div>
+
+      <div *ngFor="let skillType of getSkillTypes()">
+        <h3>
+          {{ skillType }}
+        </h3>
+
+        <div class="skillsOfType">
+          <resume-skill-index
+            *ngFor="let skill of getSkillByType(skillType)"
+            [skillName]="skill.name"
+            [scaleIndex]="skill.index"
+            [scaleMax]="skill.maxIndex"
+          ></resume-skill-index>
+        </div>
+      </div>
     </div>
+    <!-- --- End Skills --- -->
+  </div>
+  <div class="resumeMain">
+    <!-- --- Experiences --- -->
+    
+    <!-- --- End Experiences --- -->
   </div>
 </div>

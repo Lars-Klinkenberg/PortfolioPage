@@ -9,9 +9,6 @@ export interface Resume {
 export interface PersonalData {
   name: string;
   jobTitle: string;
-  email: string;
-  github: string;
-  linkedin: string;
 }
 
 export interface Skill {
@@ -52,3 +49,8 @@ export const SkillOrder = {
   2: SkillType.framework,
   3: SkillType.other,
 };
+
+export interface Link {
+  name: string;
+  url: string;
+}
