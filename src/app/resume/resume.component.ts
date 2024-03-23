@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { SkillIndexComponent } from './components/skill-index/skill-index.component';
-import myResume from './resume.data';
+import myResume from './model/resume.data';
 import { CommonModule } from '@angular/common';
-import { SkillOrder } from './resume.model';
+import { SkillOrder } from './model/resume.model';
 
 @Component({
   selector: 'app-resume',
