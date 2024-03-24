@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageIndicatorComponent } from './page-indicator.component';
+import { ExperienceComponent } from './experience.component';
 
-describe('PageIndikatorComponent', () => {
-  let component: PageIndicatorComponent;
-  let fixture: ComponentFixture<PageIndicatorComponent>;
+describe('ExperienceComponent', () => {
+  let component: ExperienceComponent;
+  let fixture: ComponentFixture<ExperienceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PageIndicatorComponent]
+      imports: [ExperienceComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PageIndicatorComponent);
+    fixture = TestBed.createComponent(ExperienceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

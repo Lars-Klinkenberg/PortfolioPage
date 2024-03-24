@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'my-app';
-  pageIndex = 2;
-  welcomeMessage = 'Lars Klinkenberg';
-  pages: string[] = ['home', 'about'];
-
-  public navigateToPage(index: number) {
-    console.log('switching to ', this.pages[index]);
-  }
+  title = 'PortfolioPage';
 }
