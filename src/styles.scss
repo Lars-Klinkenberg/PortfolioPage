@@ -1,3 +1,6 @@
+@use "./_mixins"as *;
+@use "./_variables"as *;
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material'as mat;
@@ -31,52 +34,6 @@ $PortfolioPage-theme: mat.define-light-theme((color: (primary: $PortfolioPage-pr
 // that you are using.
 @include mat.all-component-themes($PortfolioPage-theme);
 
-$light-grey: #d9d9d9;
-$dark-grey: #404040;
-$background-color: #fff;
-
-$main-headline-color: $dark-grey;
-$sec-headline-color: #accabd;
-
-h1 {
-  font-weight: normal;
-  font-family: "Open Sans";
-  font-size: 20px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: $main-headline-color;
-}
-
-h2 {
-  font-weight: bold;
-  font-style: italic;
-  font-family: "Open Sans";
-  font-size: 20px;
-  color: $main-headline-color;
-}
-
-h3 {
-  font-weight: bolder;
-  font-family: "Open Sans";
-  font-size: 16px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: $sec-headline-color;
-}
-
-span,
-p {
-  font-family: "Open Sans";
-  font-size: 14px;
-  color: $dark-grey;
-}
-
-a {
-  font-family: "Open Sans";
-  font-size: 14px;
-  color: $dark-grey;
-  text-decoration: none;
-}
 
 html,
 body {
@@ -85,8 +42,28 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans";
 }
+
+h1 {
+  @include text-headline-large;
+}
+
+h2 {
+  @include text-headline-medium;
+}
+
+h3 {
+  @include text-headline-small;
+}
+
+span,
+p,
+a {
+  @include text;
+  text-decoration: none;
+}
+
 
 .spacer-25 {
   padding: 25px;

@@ -1,0 +1,29 @@
+@use "./_variables"as *;
+
+@mixin text-headline-large {
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $main-headline-color;
+}
+
+@mixin text-headline-medium {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    color: $main-headline-color;
+}
+
+@mixin text-headline-small {
+    font-weight: bolder;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $sec-headline-color;
+}
+
+@mixin text {
+    font-size: 14px;
+    color: $dark-grey;
+}

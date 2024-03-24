@@ -1,8 +1,10 @@
 import { Routes } from '@angular/router';
-import { ResumeComponent } from './resume/resume.component';
+import { ResumeComponent } from './pages/resume/resume.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-    { path: 'resume', component: ResumeComponent },
-    { path: '', redirectTo: '/resume', pathMatch: 'full' },
-    { path: '**', redirectTo: '/resume' }
+  { path: 'resume', component: ResumeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' },
 ];
