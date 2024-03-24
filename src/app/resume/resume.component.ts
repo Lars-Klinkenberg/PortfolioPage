@@ -3,11 +3,12 @@ import { SkillIndexComponent } from './components/skill-index/skill-index.compon
 import myResume from './model/resume.data';
 import { CommonModule } from '@angular/common';
 import { SkillOrder } from './model/resume.model';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [SkillIndexComponent, CommonModule],
+  imports: [CommonModule, SkillIndexComponent, ExperienceComponent],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss',
 })
@@ -22,6 +23,12 @@ export class ResumeComponent {
   getSkillByType(type: string) {
     return this.resumeData.skills.filter(
       (skill) => skill.type?.toString() === type
+    );
+  }
+
+  getExperiencesByType(type: string) {
+    return this.resumeData.experiences.filter(
+      (experience) => experience.type.toString() === type
     );
   }
 }

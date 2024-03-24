@@ -1,3 +1,5 @@
+@use "styles"as *;
+
 .resumePage {
     display: flex;
     flex-direction: row;
@@ -52,8 +54,24 @@
 
     .resumeMain {
         flex-grow: 100;
-        min-width: 500px;
+        min-width: min(100%, 500px);
+        max-width: calc(90% - 500px);
         margin: 10px;
 
+        .allExperiences {
+            & :first-child {
+                &::before {
+                    display: block;
+                    content: "";
+                    width: 20px;
+                    height: 30px;
+                    background-color: $background-color;
+                    position: relative;
+                    left: -10px;
+                    top: 20px;
+                    z-index: 1;
+                }
+            }
+        }
     }
 }

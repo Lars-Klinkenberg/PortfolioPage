@@ -4,7 +4,11 @@
     <div class="personalData">
       <h1 class="name">{{ resumeData.personalData.name }}</h1>
       <h3 class="jobTitle">{{ resumeData.personalData.jobTitle }}</h3>
-      <img src="../../assets/Klinkenberg_Lars.jpg" alt="Profil Bild" class="profile"/>
+      <img
+        src="../../assets/Klinkenberg_Lars.jpg"
+        alt="Profil Bild"
+        class="profile"
+      />
     </div>
     <!-- --- End Personal Data -->
     <!-- --- Skills --- -->
@@ -46,7 +50,41 @@
   </div>
   <div class="resumeMain">
     <!-- --- Experiences --- -->
-    
+    <div class="resumeHeader">
+      <hr />
+      <h1>Berufserfahrung / Praktika</h1>
+      <hr />
+    </div>
+    <div class="allExperiences">
+      <resume-experience
+        *ngFor="let experience of getExperiencesByType('Berufserfahrung')"
+        [jobTitle]="experience.jobTitle"
+        [company]="experience.company"
+        [startDate]="experience.startDate"
+        [endDate]="experience.endDate"
+        [description]="experience.description"
+      >
+      </resume-experience>
+    </div>
+
+    <div class="spacer-25"></div>
+
+    <div class="resumeHeader">
+      <hr />
+      <h1>Bildungsweg</h1>
+      <hr />
+    </div>
+    <div class="allExperiences">
+      <resume-experience
+        *ngFor="let experience of getExperiencesByType('Bildungsweg')"
+        [jobTitle]="experience.jobTitle"
+        [company]="experience.company"
+        [startDate]="experience.startDate"
+        [endDate]="experience.endDate"
+        [description]="experience.description"
+      >
+      </resume-experience>
+    </div>
     <!-- --- End Experiences --- -->
   </div>
 </div>

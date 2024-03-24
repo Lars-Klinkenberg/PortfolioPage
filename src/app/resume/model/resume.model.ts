@@ -28,7 +28,7 @@ export interface Experience {
 }
 
 export enum ExperienceType {
-  work = 'Berufserfahrung / Praktika',
+  work = 'Berufserfahrung',
   education = 'Bildungsweg',
   project = 'Projekt',
 }
