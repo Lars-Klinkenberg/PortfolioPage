@@ -47,6 +47,22 @@
       </div>
     </div>
     <!-- --- End Skills --- -->
+    <div class="spacer-25"></div>
+    <!-- --- Hobbies --- -->
+    <div class="resumeHeader">
+      <hr />
+      <h1>Hobbys</h1>
+      <hr />
+    </div>
+    <div class="skillsOfType">
+      <resume-skill-index
+        *ngFor="let hobby of resumeData.hobbies"
+        [skillName]="hobby"
+        [scaleIndex]="0"
+        [scaleMax]="0"
+      ></resume-skill-index>
+    </div>
+    <!-- --- End Hobbies -->
   </div>
   <div class="resumeMain">
     <!-- --- Experiences --- -->
@@ -62,7 +78,7 @@
         [company]="experience.company"
         [startDate]="experience.startDate"
         [endDate]="experience.endDate"
-        [description]="experience.description"
+        [descriptions]="experience.descriptions"
       >
       </resume-experience>
     </div>
@@ -81,10 +97,23 @@
         [company]="experience.company"
         [startDate]="experience.startDate"
         [endDate]="experience.endDate"
-        [description]="experience.description"
+        [descriptions]="experience.descriptions"
       >
       </resume-experience>
     </div>
     <!-- --- End Experiences --- -->
+    <div class="spacer-25"></div>
+    <!-- --- Certifications --- -->
+    <div class="resumeHeader">
+      <hr />
+      <h1>Zertifikate</h1>
+      <hr />
+    </div>
+    <resume-certificate
+      *ngFor="let certificate of resumeData.certifications"
+      [name]="certificate.name"
+      [date]="certificate.date"
+    ></resume-certificate>
+    <!-- End Certifications -->
   </div>
 </div>

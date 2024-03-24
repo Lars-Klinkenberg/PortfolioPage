@@ -78,6 +78,17 @@ const myResume: Resume = {
       index: 4,
       maxIndex: 5,
     },
+    {
+      name: 'Führerschein Klasse B',
+      type: SkillType.more,
+      index: 0,
+      maxIndex: 0,
+    },
+  ],
+  hobbies: [
+    'Klettern',
+    'Gaming',
+    'Programmieren z.B. mit Raspberry Pi'
   ],
   experiences: [
     {
@@ -86,8 +97,10 @@ const myResume: Resume = {
       company: 'adesso SE',
       startDate: '10/2020',
       endDate: '03/2024',
-      description:
-        'Ich habe meinen Fokus besonders auf die Frontendentwicklung gesetzt. Hier habe ich durch meine Arbeit in Kundenprojekten meine Kenntnisse in JavaScript und Angular weiter vertiefen können.In war hauptsächlich in Kundenprojekten für Chatbotlösungen beschäftigt. Hier war ich Hauptverantwortlicher für die Anbindung im Frontend der Kundensysteme an den Servicebot. Zudem unterstützte ich die Entwicklung neuer Features',
+      descriptions: [
+        'Ich habe meinen Fokus besonders auf die Frontendentwicklung gesetzt. Hier habe ich durch meine Arbeit in Kundenprojekten meine Kenntnisse in JavaScript und Angular weiter vertiefen können.',
+        'Ich war hauptsächlich in Kundenprojekten für Chatbotlösungen beschäftigt. Hier war ich Hauptverantwortlicher für die Anbindung im Frontend der Kundensysteme an den Servicebot. Zudem unterstützte ich die Entwicklung neuer Features.',
+      ],
     },
     {
       type: ExperienceType.work,
@@ -95,7 +108,7 @@ const myResume: Resume = {
       company: 'adesso SE',
       startDate: '08/2020',
       endDate: '10/2020',
-      description: '',
+      descriptions: [''],
     },
     {
       type: ExperienceType.work,
@@ -103,8 +116,11 @@ const myResume: Resume = {
       company: 'Regionales Rechenzentrum der Universität zu Köln',
       startDate: '06/2019',
       endDate: '08/2019',
-      description:
-        '- Erstellung neuer Websitetemplates zur Darstellung aller möglichen Funktionen des Systems - Einarbeitung in komplexere Java-Programmierumgebungen - Programmierung kleinerer Funktionen',
+      descriptions: [
+        '- Erstellung neuer Websitetemplates zur Darstellung aller möglichen Funktionen des Systems',
+        '- Einarbeitung in komplexere Java-Programmierumgebungen ',
+        '- Programmierung kleinerer Funktionen',
+      ],
     },
     {
       type: ExperienceType.work,
@@ -112,7 +128,7 @@ const myResume: Resume = {
       company: 'IT.NRW',
       startDate: '04/2016',
       endDate: '04/2016',
-      description: '',
+      descriptions: [''],
     },
     {
       type: ExperienceType.education,
@@ -120,7 +136,7 @@ const myResume: Resume = {
       company: 'Provadis School of International Management and Technology AG',
       startDate: '10/2020',
       endDate: '03/2024',
-      description: '',
+      descriptions: [''],
     },
     {
       type: ExperienceType.education,
@@ -128,8 +144,9 @@ const myResume: Resume = {
       company: 'Berufskolleg Platz der Republik für Technik und Medien',
       startDate: '08/2017',
       endDate: '06/2020',
-      description:
+      descriptions: [
         'Abschluss als staatlich geprüfter informationstechnischer Assistent',
+      ],
     },
     {
       type: ExperienceType.education,
@@ -137,7 +154,7 @@ const myResume: Resume = {
       company: 'Realschule Jüchen',
       startDate: '08/2011',
       endDate: '07/2017',
-      description: '',
+      descriptions: [''],
     },
     {
       type: ExperienceType.education,
@@ -145,7 +162,7 @@ const myResume: Resume = {
       company: 'Grundschule Gierath',
       startDate: '08/2007',
       endDate: '06/2011',
-      description: '',
+      descriptions: [''],
     },
   ],
   certifications: [

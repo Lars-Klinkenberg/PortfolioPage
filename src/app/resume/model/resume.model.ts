@@ -2,6 +2,7 @@ export interface Resume {
   personalData: PersonalData;
   languages: Skill[];
   skills: Skill[];
+  hobbies: string[];
   experiences: Experience[];
   certifications: Certificates[];
 }
@@ -13,7 +14,7 @@ export interface PersonalData {
 
 export interface Skill {
   name: string;
-  type?: string;
+  type?: SkillType;
   index: number;
   maxIndex: number;
 }
@@ -24,7 +25,7 @@ export interface Experience {
   company: string;
   startDate: string;
   endDate: string;
-  description: string;
+  descriptions: string[];
 }
 
 export enum ExperienceType {
@@ -42,12 +43,14 @@ export enum SkillType {
   programming = 'Programmiersprachen',
   framework = 'Frameworks',
   other = 'Andere',
+  more = 'Sonstiges'
 }
 
 export const SkillOrder = {
   1: SkillType.programming,
   2: SkillType.framework,
   3: SkillType.other,
+  4: SkillType.more
 };
 
 export interface Link {

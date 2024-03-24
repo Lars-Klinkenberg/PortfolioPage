@@ -4,11 +4,12 @@ import myResume from './model/resume.data';
 import { CommonModule } from '@angular/common';
 import { SkillOrder } from './model/resume.model';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { CertificateComponent } from './components/certificate/certificate.component';
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [CommonModule, SkillIndexComponent, ExperienceComponent],
+  imports: [CommonModule, SkillIndexComponent, ExperienceComponent, CertificateComponent],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss',
 })
