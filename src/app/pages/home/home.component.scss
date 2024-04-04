@@ -1,0 +1,49 @@
+@use "_variables"as *;
+@use "_mixins"as *;
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: $home-background-color;
+    padding: 20px;
+
+    .main {
+        width: min(90%, 1000px);
+    }
+
+    .side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 10%;
+    }
+}
+
+#startPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .welcome {
+        font-size: 50px;
+        font-weight: bold;
+        margin: 0;
+        color: $home-primary;
+    }
+
+    .description{
+        font-size: 20px;
+        font-weight: 300;
+        width: 70%;
+        color: $home-secondary;
+    }
+
+    .viewMore{
+        @include button-primary;
+        margin-top: 20px;
+    }
+}

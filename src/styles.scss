@@ -34,6 +34,11 @@ $PortfolioPage-theme: mat.define-light-theme((color: (primary: $PortfolioPage-pr
 // that you are using.
 @include mat.all-component-themes($PortfolioPage-theme);
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 html,
 body {
