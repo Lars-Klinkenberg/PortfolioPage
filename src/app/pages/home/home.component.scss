@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: center;
     background-color: $home-background-color;
-    padding: 20px;
+    padding: 50px;
 
     .main {
         width: min(90%, 1000px);
@@ -35,33 +35,34 @@
         color: $home-primary;
     }
 
-    .description{
+    .description {
         font-size: 20px;
         font-weight: 300;
         width: 70%;
         color: $home-secondary;
     }
 
-    .viewMore{
+    .viewMore {
         @include button-primary;
         margin-top: 20px;
     }
 }
 
-#skillSet{
+#skillSet {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    .headline{
+    .headline {
         font-size: 45px;
         font-weight: bold;
         margin: 0;
         color: $home-accent;
+        text-transform: none;
     }
-    
-    .headlineUnderline{
+
+    .headlineUnderline {
         width: 100px;
         height: 5px;
         border: 0;
@@ -69,4 +70,43 @@
         margin: 0;
         margin-bottom: 20px;
     }
+}
+
+#contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .headline {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 10px;
+        text-transform: none;
+        color: $home-accent;
+    }
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+
+    input.inputField{
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: $home-background-color-light;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+    }
+
+    .submitButton{
+        @include button-primary;
+        margin-top: 20px;
+        width: 50%;
+        align-self: flex-end;
+    }
+}
 }
