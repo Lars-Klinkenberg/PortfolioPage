@@ -9,6 +9,17 @@
     <button class="viewMore">View My Work</button>
   </div>
   <div class="side">
-    <page-indicator [currentPage]="0" [totalPages]="4"></page-indicator>
+    <page-indicator [currentPage]="0" [totalPages]="3"></page-indicator>
+  </div>
+</div>
+
+<div class="page" id="skillSet">
+  <div class="main">
+    <h1 class="headline">Skill-Set</h1>
+    <hr class="headlineUnderline">
+    <skill-set [skills]="skills"></skill-set>
+  </div>
+  <div class="side">
+    <page-indicator [currentPage]="1" [totalPages]="3"></page-indicator>
   </div>
 </div>

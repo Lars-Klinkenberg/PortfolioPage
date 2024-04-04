@@ -3,7 +3,7 @@
 
 .page {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -45,5 +45,28 @@
     .viewMore{
         @include button-primary;
         margin-top: 20px;
+    }
+}
+
+#skillSet{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .headline{
+        font-size: 45px;
+        font-weight: bold;
+        margin: 0;
+        color: $home-accent;
+    }
+    
+    .headlineUnderline{
+        width: 100px;
+        height: 5px;
+        border: 0;
+        background-color: $home-accent;
+        margin: 0;
+        margin-bottom: 20px;
     }
 }
