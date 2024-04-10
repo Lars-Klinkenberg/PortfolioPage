@@ -8,7 +8,7 @@
     align-items: center;
 
     .skillItem {
-        width: max(30%, 200px);
+        width: 30%;
         aspect-ratio: 1/1;
         overflow: hidden;
 
@@ -22,7 +22,7 @@
         margin-left: 0;
         margin-bottom: 0;
         padding: 10px;
-        
+
         .icon {
             width: 40px;
             aspect-ratio: 1/1;
@@ -38,5 +38,11 @@
             margin: 0;
         }
 
+        // on small devices change width to 100%
+        @media (max-width: $mobile-width) {
+            width: 100%;
+            aspect-ratio: unset;
+            margin-right: 0;
+        }
     }
 }

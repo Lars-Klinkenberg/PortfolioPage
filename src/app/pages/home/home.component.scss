@@ -21,6 +21,19 @@
         justify-content: center;
         width: 10%;
     }
+
+    // on small screens, hide the side bar
+    @media (max-width: $mobile-width) {
+        padding: 25px;
+
+        .main {
+            width: 100%;
+        }
+
+        .side {
+            display: none;
+        }
+    }
 }
 
 #startPage {
@@ -30,7 +43,7 @@
     align-items: center;
 
     .welcome {
-        font-size: 50px;
+        font-size: min(50px, 10vw);
         font-weight: bold;
         margin: 0;
         color: $home-primary;
@@ -41,6 +54,11 @@
         font-weight: 300;
         width: 70%;
         color: $home-secondary;
+
+        // on small screens, make the description full width
+        @media (max-width: $mobile-width) {
+            width: 100%;
+        }
     }
 
     .viewMore {
@@ -109,6 +127,11 @@
             margin-top: 20px;
             width: 50%;
             align-self: flex-end;
+        }
+
+        // on small screens, make the form full width
+        @media (max-width:$mobile-width) {
+            width: 90%;
         }
     }
 }
