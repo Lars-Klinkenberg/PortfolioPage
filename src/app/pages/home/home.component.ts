@@ -3,11 +3,17 @@ import { PageIndicatorComponent } from '../../shared/page-indicator/page-indicat
 import { Skill } from '../../shared/skill-set/Skill';
 import { SkillSetComponent } from '../../shared/skill-set/skill-set.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PageIndicatorComponent, SkillSetComponent, ReactiveFormsModule],
+  imports: [
+    PageIndicatorComponent,
+    SkillSetComponent,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -56,6 +62,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  updateForm() {
-  }
+  updateForm() {}
 }

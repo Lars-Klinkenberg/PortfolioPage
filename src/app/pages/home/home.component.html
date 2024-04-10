@@ -6,7 +6,9 @@
       experience in HTML, CSS, JavaScript, Angular, and more. I'm always looking
       for new opportunities to learn and grow.
     </p>
-    <button class="viewMore">View My Work</button>
+    <a [routerLink]="['/resume']" target="_blank">
+      <button class="viewMore">View My Resume</button>
+    </a>
   </div>
   <div class="side">
     <page-indicator [currentPage]="0" [totalPages]="3"></page-indicator>
@@ -28,9 +30,23 @@
   <div class="main">
     <h1 class="headline">Connect with me</h1>
     <div class="form">
-        <input class="inputField" id="email" type="email" [formControl]="email" placeholder="Email"/>
-        <input class="inputField" id="name" type="text" [formControl]="message" placeholder="Message"/>
-        <button class="submitButton" type="button" (click)="updateForm()">Update Name</button>    
+      <input
+        class="inputField"
+        id="email"
+        type="email"
+        [formControl]="email"
+        placeholder="Email"
+      />
+      <input
+        class="inputField"
+        id="name"
+        type="text"
+        [formControl]="message"
+        placeholder="Message"
+      />
+      <button class="submitButton" type="button" (click)="updateForm()">
+        Update Name
+      </button>
     </div>
   </div>
   <div class="side">
