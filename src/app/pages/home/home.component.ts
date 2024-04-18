@@ -20,40 +20,40 @@ import { RouterLink } from '@angular/router';
 export class HomeComponent implements OnInit {
   skills: Skill[] = [
     {
-      name: 'Vue',
+      name: 'TypeScript',
       description:
-        'Vue is a progressive framework for building user interfaces.',
-      iconPath: 'github-mark-white.png',
+        'I have over 3 years of experience using TypeScript in a business environment.',
+      iconPath: 'ts-logo-512.png',
     },
     {
-      name: 'Vue',
+      name: 'Angular',
       description:
-        'Vue is a progressive framework for building user interfaces.',
-      iconPath: 'github-mark-white.png',
+        'Angular is my go-to framework for web development. I have used it in multiple projects, including this website.',
+      iconPath: 'angular-icon-logo.png',
     },
     {
-      name: 'Vue',
+      name: 'HTML & CSS',
       description:
-        'Vue is a progressive framework for building user interfaces.',
-      iconPath: 'github-mark-white.png',
+        'I have over 5 years of experience with HTML and CSS, which I used to create responsive and visually appealing webapps.',
+      iconPath: 'html5.png',
     },
     {
-      name: 'Vue',
+      name: 'Java',
       description:
-        'Vue is a progressive framework for building user interfaces.',
-      iconPath: 'github-mark-white.png',
+        'I used Java in a variety of projects as my job as a full-stack developer.',
+      iconPath: 'java.png',
     },
     {
-      name: 'Vue',
+      name: 'C & C#',
       description:
-        'Vue is a progressive framework for building user interfaces.',
-      iconPath: 'github-mark-white.png',
+        'I learned coding using both C and C#. With C, I developed small projects on a Raspberry Pi, while I utilized C# to create user interfaces in WPF applications.',
+      iconPath: 'C_Logo.png',
     },
     {
-      name: 'Vue',
+      name: 'MySQL & MongoDB',
       description:
-        'Vue is a progressive framework for building user interfaces.',
-      iconPath: 'github-mark-white.png',
+        'MySQL and MongoDB are database management systems I learned to use in school and university. I\'ve applied both in multiple projects, leveraging their respective strengths for efficient data management.',
+      iconPath: 'mongodb-logo.png',
     },
   ];
 
