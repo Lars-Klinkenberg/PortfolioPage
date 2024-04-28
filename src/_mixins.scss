@@ -5,14 +5,14 @@
     font-size: 20px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: $main-headline-color;
+    color: $resume-main-headline-color;
 }
 
 @mixin text-headline-medium {
     font-weight: bold;
     font-style: italic;
     font-size: 20px;
-    color: $main-headline-color;
+    color: $resume-main-headline-color;
 }
 
 @mixin text-headline-small {
@@ -20,10 +20,26 @@
     font-size: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: $sec-headline-color;
+    color: $resume-sec-headline-color;
 }
 
 @mixin text {
     font-size: 14px;
     color: $dark-grey;
+}
+
+@mixin button-primary {
+    background-color: $home-accent;
+    color: $home-primary;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    &:hover {
+        background-color: darken($home-accent, 5%);
+    }
 }
